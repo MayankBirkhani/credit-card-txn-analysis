@@ -24,7 +24,7 @@ def process_transactions(
         df.withColumn(
             "transaction_category",
             when(col("transaction_amount") <= 100, lit("Low"))
-            .when(col("transaction_amount") > 100 & (col("transaction_amount") <= 500), lit("Medium"))
+            .when((col("transaction_amount") > 100) & (col("transaction_amount") <= 500), lit("Medium"))
             .otherwise(lit("High"))
         )
         .withColumn("transaction_timestamp", to_timestamp(col("transaction_timestamp")))
