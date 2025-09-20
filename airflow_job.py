@@ -52,7 +52,7 @@ with DAG(
         },
         "environment_config":{
             "execution_config":{
-                "service_account":"818880352679-compute@developer.gserviceaccount.com",
+                "service_account":"developer.gserviceaccount.com",
                 "network_uri":"projects/astute-impulse-448710-h3/global/networks/default",
                 "subnetwork_uri":"projects/astute-impulse-448710-h3/regions/us-central1/subnetworks/default",
             }
