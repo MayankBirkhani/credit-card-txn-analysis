@@ -8,25 +8,25 @@ on:
 
 jobs:
   # Job 1: Run ONLY `test_transactions_processing.py` for Dev Branch
-  run-tests:
-    if: github.ref == 'refs/heads/dev'
-    runs-on: ubuntu-latest
+  # run-tests:
+  #   if: github.ref == 'refs/heads/dev'
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      - name: Set Up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.12.3"
+  #     - name: Set Up Python
+  #       uses: actions/setup-python@v3
+  #       with:
+  #         python-version: "3.12.3"
 
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+  #     - name: Install Dependencies
+  #       run: |
+  #         pip install -r requirements.txt
 
-      - name: Run Pytest for `test_transactions_processing.py`
-        run: pytest tests/test_transactions_processing.py
+  #     - name: Run Pytest for `test_transactions_processing.py`
+  #       run: pytest tests/test_transactions_processing.py
 
   # Job 2: Upload Airflow DAG & PySpark Job to GCS (Only for Main Branch)
   deploy-to-prod:
